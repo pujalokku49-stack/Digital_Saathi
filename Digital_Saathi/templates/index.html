@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Saathi</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app-shell">
+    <header class="app-header">
+        <div>
+            <p class="eyebrow">Digital Support</p>
+            <h1>Digital Saathi 🤖</h1>
+        </div>
+        <div class="header-actions">
+            <span id="currentTime" class="time-pill"></span>
+            <button id="themeToggle" class="theme-toggle" type="button">🌙</button>
+            <a href="/login" class="auth-link-btn">Login</a>
+            <a href="/register" class="auth-link-btn">Register</a>
+            <a href="/logout" class="logout-btn">Logout</a>
+            <span class="online-pill">Online</span>
+        </div>
+    </header>
+
+    <section class="quick-actions">
+        <button id="callButton" class="action-btn" type="button">📞 Call Support</button>
+        <button id="whatsappButton" class="action-btn" type="button">💬 WhatsApp</button>
+        <button id="upiButton" class="action-btn" type="button">💳 UPI Pay</button>
+        <button id="agentButton" class="action-btn" type="button">👨‍💼 Talk to Agent</button>
+    </section>
+
+    <section class="chat-panel">
+        <div class="chat-box">
+            <p class="chat-label">Ask anything you need</p>
+            <div class="input-row">
+                <input type="text" id="userInput" placeholder="Type your question here...">
+                <button id="searchButton" type="button">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="suggestions-panel">
+        <button class="suggestion-chip" data-suggestion="how do i pay my bill">Pay bill</button>
+        <button class="suggestion-chip" data-suggestion="what is my balance">Check balance</button>
+        <button class="suggestion-chip" data-suggestion="how to use whatsapp">Use WhatsApp</button>
+        <button class="suggestion-chip" data-suggestion="how to reset password">Reset password</button>
+        <button class="suggestion-chip" data-suggestion="what is my emi">EMI details</button>
+    </section>
+
+    <section class="info-panel">
+        <div class="info-card">
+            <h2>How it helps</h2>
+            <p>Digital Saathi gives quick guidance for payments, account questions, loan details, and basic support.</p>
+        </div>
+        <div class="info-card">
+            <h2>Why people use it</h2>
+            <p>It is simple, friendly, and designed to make digital assistance easier for everyday users.</p>
+        </div>
+    </section>
+
+    <section class="history-panel">
+        <h3>Recent activity</h3>
+        <ul id="historyList"></ul>
+    </section>
+
+    <section class="result-panel">
+        <p id="status" class="status"></p>
+        <div class="response-box">
+            <p id="response" class="response"></p>
+            <div class="response-tools">
+                <button id="listenButton" class="tool-btn" type="button">🔊 Listen</button>
+                <button id="copyButton" class="tool-btn" type="button">📋 Copy</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
