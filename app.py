@@ -19,7 +19,6 @@ def create_app():
 
     # Ensure database directory exists
     os.makedirs(os.path.dirname(Config.DATABASE), exist_ok=True)
-    init_db()
 
     # Register blueprints
     
