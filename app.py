@@ -10,6 +10,9 @@ from flask import Flask
 from config import Config
 
 load_dotenv()
+@app.route('/')
+def home():
+    return "Digital Saathi is LIVE 🚀"
 
 
 def create_app():
