@@ -3,18 +3,12 @@ Digital Saathi – Empowering Women & Elders through Technology
 Main Flask application entry point.
 """
 import os
-
 from dotenv import load_dotenv
 from flask import Flask
 
 from config import Config
 
 load_dotenv()
-
-app = Flask(__name__) 
-@app.route('/')
-def home():
-    return "Digital Saathi is LIVE 🚀"
 
 
 def create_app():
@@ -25,12 +19,13 @@ def create_app():
     # Ensure database directory exists
     os.makedirs(os.path.dirname(Config.DATABASE), exist_ok=True)
 
-    # Register blueprints
-    
+    # ✅ ADD YOUR HOME ROUTE HERE
+    @app.route("/")
+    def home():
+        return "Digital Saathi is LIVE 🚀"
 
     @app.context_processor
     def inject_globals():
-        """Make common variables available in all templates."""
         from flask import session
 
         return {
@@ -43,6 +38,7 @@ def create_app():
     return app
 
 
+# ✅ ONLY ONE APP INSTANCE
 app = create_app()
 
 if __name__ == "__main__":
