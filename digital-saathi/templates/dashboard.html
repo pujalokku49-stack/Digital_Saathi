@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard – Digital Saathi{% endblock %}
+
+{% block content %}
+<section class="dashboard-section py-5">
+    <div class="container">
+        <div class="dashboard-header animate-slide-up">
+            <h1><span data-i18n="dashboard_welcome">Welcome</span>, {{ user_name }}!</h1>
+            <p class="text-muted fs-5" data-i18n="dashboard_subtitle">Choose a module to start learning</p>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <!-- Digital Literacy -->
+            <div class="col-md-6 col-lg-4">
+                <div class="module-card h-100 animate-fade-in">
+                    <div class="module-icon literacy"><i class="bi bi-book-fill"></i></div>
+                    <h2 data-i18n="module_literacy">Digital Literacy</h2>
+                    <p data-i18n="module_literacy_desc">Learn smartphone basics, WhatsApp, UPI & more</p>
+                    <a href="{{ url_for('dashboard.literacy') }}" class="btn btn-module stretched-link" data-i18n="open_module">Open Module</a>
+                </div>
+            </div>
+
+            <!-- Government Schemes -->
+            <div class="col-md-6 col-lg-4">
+                <div class="module-card h-100 animate-fade-in delay-1">
+                    <div class="module-icon schemes"><i class="bi bi-building-fill"></i></div>
+                    <h2 data-i18n="module_schemes">Government Schemes</h2>
+                    <p data-i18n="module_schemes_desc">PM-KISAN, Ayushman Bharat, pension schemes</p>
+                    <a href="{{ url_for('dashboard.schemes') }}" class="btn btn-module stretched-link" data-i18n="open_module">Open Module</a>
+                </div>
+            </div>
+
+            <!-- Online Safety -->
+            <div class="col-md-6 col-lg-4">
+                <div class="module-card h-100 animate-fade-in delay-2">
+                    <div class="module-icon safety"><i class="bi bi-shield-lock-fill"></i></div>
+                    <h2 data-i18n="module_safety">Online Safety</h2>
+                    <p data-i18n="module_safety_desc">Avoid scams, secure passwords, safe UPI usage</p>
+                    <a href="{{ url_for('dashboard.safety') }}" class="btn btn-module stretched-link" data-i18n="open_module">Open Module</a>
+                </div>
+            </div>
+
+            <!-- Healthcare -->
+            <div class="col-md-6 col-lg-4">
+                <div class="module-card h-100 animate-fade-in">
+                    <div class="module-icon healthcare"><i class="bi bi-heart-pulse-fill"></i></div>
+                    <h2 data-i18n="module_healthcare">Healthcare & Emergency</h2>
+                    <p data-i18n="module_healthcare_desc">Helplines, telemedicine, first aid guidance</p>
+                    <a href="{{ url_for('dashboard.healthcare') }}" class="btn btn-module stretched-link" data-i18n="open_module">Open Module</a>
+                </div>
+            </div>
+
+            <!-- AI Chatbot -->
+            <div class="col-md-6 col-lg-4">
+                <div class="module-card h-100 animate-fade-in delay-1 highlight-card">
+                    <div class="module-icon chatbot"><i class="bi bi-robot"></i></div>
+                    <h2 data-i18n="module_chatbot">AI Assistant</h2>
+                    <p data-i18n="module_chatbot_desc">Ask anything about technology – voice enabled</p>
+                    <a href="{{ url_for('chatbot.chat_page') }}" class="btn btn-accent stretched-link" data-i18n="open_module">Open Module</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

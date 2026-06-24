@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Login – Digital Saathi{% endblock %}
+
+{% block content %}
+<section class="auth-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="auth-card animate-slide-up">
+                    <div class="text-center mb-4">
+                        <div class="auth-icon"><i class="bi bi-box-arrow-in-right"></i></div>
+                        <h1 class="h3" data-i18n="login_title">Welcome Back</h1>
+                        <p class="text-muted" data-i18n="login_subtitle">Sign in to continue your learning journey</p>
+                    </div>
+
+                    {% if errors.get('general') %}
+                    <div class="alert alert-danger" role="alert">{{ errors.general }}</div>
+                    {% endif %}
+
+                    <form method="POST" action="{{ url_for('auth.login') }}" novalidate>
+                        <div class="mb-3">
+                            <label for="email" class="form-label" data-i18n="email">Email Address</label>
+                            <input type="email" class="form-control form-control-lg {% if errors.get('email') %}is-invalid{% endif %}"
+                                   id="email" name="email" value="{{ form_data.email }}" required
+                                   autocomplete="email" aria-describedby="emailHelp">
+                            {% if errors.get('email') %}
+                            <div class="invalid-feedback">{{ errors.email }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="password" class="form-label" data-i18n="password">Password</label>
+                            <input type="password" class="form-control form-control-lg {% if errors.get('password') %}is-invalid{% endif %}"
+                                   id="password" name="password" required autocomplete="current-password">
+                            {% if errors.get('password') %}
+                            <div class="invalid-feedback">{{ errors.password }}</div>
+                            {% endif %}
+                        </div>
+
+                        <button type="submit" class="btn btn-accent btn-lg w-100" data-i18n="login_btn">Sign In</button>
+                    </form>
+
+                    <p class="text-center mt-4 mb-0">
+                        <span data-i18n="no_account">Don't have an account?</span>
+                        <a href="{{ url_for('auth.register') }}" data-i18n="nav_register">Register</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

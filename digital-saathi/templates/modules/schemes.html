@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Government Schemes – Digital Saathi{% endblock %}
+
+{% block content %}
+<section class="module-section py-5">
+    <div class="container">
+        <a href="{{ url_for('dashboard.home') }}" class="btn btn-outline-secondary mb-4">
+            <i class="bi bi-arrow-left"></i> <span data-i18n="back_dashboard">Back to Dashboard</span>
+        </a>
+
+        <h1 class="module-page-title"><i class="bi bi-building-fill text-warning"></i> Government Schemes (India)</h1>
+        <p class="lead text-muted mb-5">Important schemes for women, farmers, and senior citizens.</p>
+
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="scheme-card">
+                    <div class="scheme-badge">Farmers</div>
+                    <h3>PM-KISAN</h3>
+                    <p>₹6,000 per year in 3 installments for eligible farmer families.</p>
+                    <ul>
+                        <li><strong>Apply:</strong> pmkisan.gov.in or visit CSC center</li>
+                        <li><strong>Documents:</strong> Aadhaar, land records, bank account</li>
+                        <li><strong>Helpline:</strong> 155261 / 1800-115-526</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="scheme-card">
+                    <div class="scheme-badge">Health</div>
+                    <h3>Ayushman Bharat (PM-JAY)</h3>
+                    <p>Free health insurance up to ₹5 lakh per family per year.</p>
+                    <ul>
+                        <li><strong>Apply:</strong> pmjay.gov.in or Ayushman Mitra at hospital</li>
+                        <li><strong>Eligibility:</strong> Based on SECC 2011 data</li>
+                        <li><strong>Helpline:</strong> 14555</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="scheme-card">
+                    <div class="scheme-badge">Women</div>
+                    <h3>PM Matru Vandana Yojana</h3>
+                    <p>₹5,000 maternity benefit for first living child.</p>
+                    <ul>
+                        <li><strong>Apply:</strong> Through Anganwadi or ASHA worker</li>
+                        <li><strong>Documents:</strong> Aadhaar, bank passbook, MCP card</li>
+                        <li><strong>Helpline:</strong> Contact local Anganwadi center</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="scheme-card">
+                    <div class="scheme-badge">Seniors</div>
+                    <h3>Indira Gandhi National Old Age Pension</h3>
+                    <p>Monthly pension for BPL citizens aged 60+ (amount varies by state).</p>
+                    <ul>
+                        <li><strong>Apply:</strong> Through District Social Welfare Office</li>
+                        <li><strong>Documents:</strong> Age proof, BPL card, bank account</li>
+                        <li><strong>Helpline:</strong> State social welfare department</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="scheme-card">
+                    <div class="scheme-badge">Gas</div>
+                    <h3>PM Ujjwala Yojana</h3>
+                    <p>Free LPG connection for women from BPL households.</p>
+                    <ul>
+                        <li><strong>Apply:</strong> Through LPG distributor or online</li>
+                        <li><strong>Documents:</strong> Aadhaar, BPL ration card</li>
+                        <li><strong>Helpline:</strong> 1906</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="scheme-card">
+                    <div class="scheme-badge">Digital</div>
+                    <h3>DigiLocker</h3>
+                    <p>Store government documents digitally – Aadhaar, certificates, licenses.</p>
+                    <ul>
+                        <li><strong>Apply:</strong> digilocker.gov.in or mobile app</li>
+                        <li><strong>Login:</strong> Use Aadhaar or mobile number</li>
+                        <li><strong>Helpline:</strong> support@digitallocker.gov.in</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Digital Literacy – Digital Saathi{% endblock %}
+
+{% block content %}
+<section class="module-section py-5">
+    <div class="container">
+        <a href="{{ url_for('dashboard.home') }}" class="btn btn-outline-secondary mb-4">
+            <i class="bi bi-arrow-left"></i> <span data-i18n="back_dashboard">Back to Dashboard</span>
+        </a>
+
+        <h1 class="module-page-title"><i class="bi bi-book-fill text-primary"></i> Digital Literacy Tutorials</h1>
+        <p class="lead text-muted mb-5">Simple step-by-step guides to help you use technology confidently.</p>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="lesson-card">
+                    <span class="lesson-number">1</span>
+                    <h3><i class="bi bi-phone"></i> Using Your Smartphone</h3>
+                    <ul class="lesson-steps">
+                        <li>Press the power button to turn on your phone</li>
+                        <li>Swipe up or enter PIN to unlock</li>
+                        <li>Tap icons to open apps</li>
+                        <li>Use the back button (◁) to go back</li>
+                        <li>Pinch to zoom in photos and maps</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="lesson-card">
+                    <span class="lesson-number">2</span>
+                    <h3><i class="bi bi-whatsapp text-success"></i> WhatsApp Basics</h3>
+                    <ul class="lesson-steps">
+                        <li>Open WhatsApp from your home screen</li>
+                        <li>Tap the green chat icon to message someone</li>
+                        <li>Type your message and tap the send arrow</li>
+                        <li>Hold the microphone icon to send voice messages</li>
+                        <li>Tap the video camera for video calls</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="lesson-card">
+                    <span class="lesson-number">3</span>
+                    <h3><i class="bi bi-credit-card text-warning"></i> UPI Payments (PhonePe, GPay, Paytm)</h3>
+                    <ul class="lesson-steps">
+                        <li>Open your UPI app (PhonePe, Google Pay, etc.)</li>
+                        <li>Tap "Send Money" or "Pay"</li>
+                        <li>Enter mobile number or scan QR code</li>
+                        <li>Enter amount and your UPI PIN</li>
+                        <li>Never share your UPI PIN with anyone!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="lesson-card">
+                    <span class="lesson-number">4</span>
+                    <h3><i class="bi bi-camera"></i> Taking & Sharing Photos</h3>
+                    <ul class="lesson-steps">
+                        <li>Open the Camera app</li>
+                        <li>Point at subject and tap the capture button</li>
+                        <li>Open Gallery/Photos to view pictures</li>
+                        <li>Tap Share icon to send via WhatsApp or email</li>
+                        <li>Delete unwanted photos to save space</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="lesson-card">
+                    <span class="lesson-number">5</span>
+                    <h3><i class="bi bi-globe"></i> Using the Internet Safely</h3>
+                    <ul class="lesson-steps">
+                        <li>Open Chrome or your browser app</li>
+                        <li>Type website address in the search bar</li>
+                        <li>Look for 🔒 lock icon for secure sites</li>
+                        <li>Don't click suspicious links in messages</li>
+                        <li>Close tabs you don't need to save data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="lesson-card">
+                    <span class="lesson-number">6</span>
+                    <h3><i class="bi bi-envelope"></i> Email Basics</h3>
+                    <ul class="lesson-steps">
+                        <li>Open Gmail or your email app</li>
+                        <li>Tap Compose (+) to write new email</li>
+                        <li>Enter recipient email, subject, and message</li>
+                        <li>Tap Send when ready</li>
+                        <li>Check Inbox for replies from others</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="{{ url_for('chatbot.chat_page') }}" class="btn btn-accent btn-lg">
+                <i class="bi bi-robot"></i> Ask AI Assistant for Help
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

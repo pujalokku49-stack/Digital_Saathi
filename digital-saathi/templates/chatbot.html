@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}AI Assistant – Digital Saathi{% endblock %}
+
+{% block content %}
+<section class="chatbot-section py-4">
+    <div class="container">
+        <div class="mb-3">
+            <a href="{{ url_for('dashboard.home') }}" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> <span data-i18n="back_dashboard">Back to Dashboard</span>
+            </a>
+        </div>
+
+        <div class="chatbot-header text-center mb-4 animate-slide-up">
+            <div class="chatbot-avatar"><i class="bi bi-robot"></i></div>
+            <h1 data-i18n="chatbot_title">Digital Saathi AI Assistant</h1>
+            <p class="text-muted" data-i18n="chatbot_subtitle">Ask me anything about technology</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="chat-container animate-fade-in">
+                    <!-- Chat messages area -->
+                    <div id="chatMessages" class="chat-messages" role="log" aria-live="polite" aria-label="Chat messages">
+                        <div class="chat-message bot-message">
+                            <div class="message-avatar"><i class="bi bi-robot"></i></div>
+                            <div class="message-bubble">
+                                Namaste! I'm Digital Saathi. Ask me about smartphones, UPI, WhatsApp, government apps, or online safety. You can type or use the microphone button!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Typing indicator -->
+                    <div id="typingIndicator" class="typing-indicator d-none">
+                        <span></span><span></span><span></span>
+                        <em data-i18n="chatbot_thinking">Thinking...</em>
+                    </div>
+
+                    <!-- Input area -->
+                    <div class="chat-input-area">
+                        <div class="input-group input-group-lg">
+                            <button type="button" id="voiceBtn" class="btn btn-voice" aria-label="Start voice input"
+                                    title="Speak your question">
+                                <i class="bi bi-mic-fill"></i>
+                            </button>
+                            <input type="text" id="chatInput" class="form-control"
+                                   data-i18n-placeholder="chatbot_placeholder"
+                                   placeholder="Type your question here..." maxlength="1000"
+                                   aria-label="Chat message input">
+                            <button type="button" id="sendBtn" class="btn btn-accent" data-i18n="chatbot_send">Send</button>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2 flex-wrap gap-2">
+                            <button type="button" id="speakBtn" class="btn btn-sm btn-outline-secondary">
+                                <i class="bi bi-volume-up-fill"></i> <span data-i18n="chatbot_speak">Read Aloud</span>
+                            </button>
+                            <small class="text-muted voice-status" id="voiceStatus"></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/voice.js') }}"></script>
+<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+{% endblock %}

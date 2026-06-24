@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Digital Saathi – Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6 animate-slide-up">
+                <span class="hero-badge"><i class="bi bi-stars"></i> Free & Easy to Use</span>
+                <h1 class="hero-title" data-i18n="hero_title">Your Friendly Digital Companion</h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">
+                    Learn technology at your own pace with voice support, simple tutorials, and an AI assistant.
+                </p>
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a href="{{ url_for('auth.register') }}" class="btn btn-accent btn-lg px-4" data-i18n="hero_cta">
+                        Get Started Free
+                    </a>
+                    <a href="#features" class="btn btn-outline-light btn-lg px-4" data-i18n="hero_learn">
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center mt-5 mt-lg-0 animate-float">
+                <div class="hero-illustration">
+                    <i class="bi bi-phone-fill"></i>
+                    <i class="bi bi-chat-heart-fill"></i>
+                    <i class="bi bi-shield-check"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-5 bg-light-section">
+    <div class="container py-4">
+        <h2 class="section-title text-center mb-5" data-i18n="features_title">Everything You Need</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card h-100 animate-fade-in">
+                    <div class="feature-icon bg-primary-soft"><i class="bi bi-person-check-fill"></i></div>
+                    <h3 data-i18n="feature_auth">Secure Login</h3>
+                    <p data-i18n="feature_auth_desc">Create your account safely and access personalized learning.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card h-100 animate-fade-in delay-1">
+                    <div class="feature-icon bg-accent-soft"><i class="bi bi-robot"></i></div>
+                    <h3 data-i18n="feature_ai">AI Chatbot</h3>
+                    <p data-i18n="feature_ai_desc">Ask any digital question – get simple, step-by-step answers.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card h-100 animate-fade-in delay-2">
+                    <div class="feature-icon bg-success-soft"><i class="bi bi-mic-fill"></i></div>
+                    <h3 data-i18n="feature_voice">Voice Assistant</h3>
+                    <p data-i18n="feature_voice_desc">Speak your questions and hear answers aloud.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card h-100 animate-fade-in">
+                    <div class="feature-icon bg-warning-soft"><i class="bi bi-building"></i></div>
+                    <h3 data-i18n="feature_schemes">Govt Schemes</h3>
+                    <p data-i18n="feature_schemes_desc">Discover PM-KISAN, Ayushman Bharat, and more.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card h-100 animate-fade-in delay-1">
+                    <div class="feature-icon bg-danger-soft"><i class="bi bi-shield-lock-fill"></i></div>
+                    <h3 data-i18n="feature_safety">Stay Safe Online</h3>
+                    <p data-i18n="feature_safety_desc">Learn to avoid scams and use UPI safely.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="feature-card h-100 animate-fade-in delay-2">
+                    <div class="feature-icon bg-info-soft"><i class="bi bi-heart-pulse-fill"></i></div>
+                    <h3 data-i18n="feature_health">Health & Emergency</h3>
+                    <p data-i18n="feature_health_desc">Quick access to helplines and telemedicine.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Accessibility Section -->
+<section class="py-5 accessibility-section">
+    <div class="container text-center">
+        <h2 class="section-title mb-4" data-i18n="accessibility_title">Built for Everyone</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-auto">
+                <div class="access-pill"><i class="bi bi-type-h1"></i> <span data-i18n="accessibility_large_text">Large Text Mode</span></div>
+            </div>
+            <div class="col-auto">
+                <div class="access-pill"><i class="bi bi-volume-up-fill"></i> <span data-i18n="accessibility_voice">Voice Support</span></div>
+            </div>
+            <div class="col-auto">
+                <div class="access-pill"><i class="bi bi-translate"></i> <span data-i18n="accessibility_languages">Multi-Language</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

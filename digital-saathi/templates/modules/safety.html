@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Online Safety – Digital Saathi{% endblock %}
+
+{% block content %}
+<section class="module-section py-5">
+    <div class="container">
+        <a href="{{ url_for('dashboard.home') }}" class="btn btn-outline-secondary mb-4">
+            <i class="bi bi-arrow-left"></i> <span data-i18n="back_dashboard">Back to Dashboard</span>
+        </a>
+
+        <h1 class="module-page-title"><i class="bi bi-shield-lock-fill text-danger"></i> Online Safety Tips</h1>
+        <p class="lead text-muted mb-5">Protect yourself from scams and stay safe on the internet.</p>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="safety-tip-card danger-tip">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <h3>Beware of OTP Fraud</h3>
+                    <p>Never share OTP with anyone – not even bank employees or police. Banks never ask for OTP over phone.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="safety-tip-card">
+                    <i class="bi bi-key-fill"></i>
+                    <h3>Strong Passwords</h3>
+                    <p>Use at least 8 characters with letters, numbers, and symbols. Don't use birth dates or phone numbers.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="safety-tip-card">
+                    <i class="bi bi-credit-card-2-front"></i>
+                    <h3>Safe UPI Usage</h3>
+                    <p>Verify recipient name before paying. Never enter UPI PIN to receive money – you only need PIN to send.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="safety-tip-card danger-tip">
+                    <i class="bi bi-envelope-exclamation"></i>
+                    <h3>Phishing Messages</h3>
+                    <p>Ignore messages claiming you won a lottery or need to update KYC via link. These are scams.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="safety-tip-card">
+                    <i class="bi bi-person-badge"></i>
+                    <h3>Social Media Privacy</h3>
+                    <p>Don't share personal details publicly. Set profiles to private. Be careful with friend requests from strangers.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="safety-tip-card">
+                    <i class="bi bi-download"></i>
+                    <h3>Safe App Downloads</h3>
+                    <p>Only download apps from Play Store or App Store. Avoid APK files from unknown sources.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="safety-tip-card">
+                    <i class="bi bi-wifi"></i>
+                    <h3>Public Wi-Fi</h3>
+                    <p>Avoid banking or UPI on public Wi-Fi. Use mobile data for sensitive transactions.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="safety-tip-card danger-tip">
+                    <i class="bi bi-telephone-x"></i>
+                    <h3>Fake Customer Care</h3>
+                    <p>Don't call numbers from Google search results. Use official numbers from your bank's website or card.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="safety-tip-card">
+                    <i class="bi bi-shield-check"></i>
+                    <h3>Report Cyber Crime</h3>
+                    <p>Report fraud at <strong>cybercrime.gov.in</strong> or call <strong>1930</strong> (National Cyber Crime Helpline).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

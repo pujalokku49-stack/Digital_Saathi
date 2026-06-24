@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Register – Digital Saathi{% endblock %}
+
+{% block content %}
+<section class="auth-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="auth-card animate-slide-up">
+                    <div class="text-center mb-4">
+                        <div class="auth-icon"><i class="bi bi-person-plus-fill"></i></div>
+                        <h1 class="h3" data-i18n="register_title">Create Account</h1>
+                        <p class="text-muted" data-i18n="register_subtitle">Join thousands learning digital skills safely</p>
+                    </div>
+
+                    <form method="POST" action="{{ url_for('auth.register') }}" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label" data-i18n="name">Full Name</label>
+                            <input type="text" class="form-control form-control-lg {% if errors.get('name') %}is-invalid{% endif %}"
+                                   id="name" name="name" value="{{ form_data.name }}" required minlength="2">
+                            {% if errors.get('name') %}
+                            <div class="invalid-feedback">{{ errors.name }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label" data-i18n="email">Email Address</label>
+                            <input type="email" class="form-control form-control-lg {% if errors.get('email') %}is-invalid{% endif %}"
+                                   id="email" name="email" value="{{ form_data.email }}" required>
+                            {% if errors.get('email') %}
+                            <div class="invalid-feedback">{{ errors.email }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label" data-i18n="phone">Mobile Number (optional)</label>
+                            <input type="tel" class="form-control form-control-lg {% if errors.get('phone') %}is-invalid{% endif %}"
+                                   id="phone" name="phone" value="{{ form_data.phone }}" pattern="[6-9][0-9]{9}"
+                                   placeholder="9876543210">
+                            {% if errors.get('phone') %}
+                            <div class="invalid-feedback">{{ errors.phone }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="password" class="form-label" data-i18n="password">Password</label>
+                                <input type="password" class="form-control form-control-lg {% if errors.get('password') %}is-invalid{% endif %}"
+                                       id="password" name="password" required minlength="8">
+                                {% if errors.get('password') %}
+                                <div class="invalid-feedback">{{ errors.password }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="confirm_password" class="form-label" data-i18n="confirm_password">Confirm Password</label>
+                                <input type="password" class="form-control form-control-lg {% if errors.get('confirm_password') %}is-invalid{% endif %}"
+                                       id="confirm_password" name="confirm_password" required>
+                                {% if errors.get('confirm_password') %}
+                                <div class="invalid-feedback">{{ errors.confirm_password }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="language" class="form-label" data-i18n="language">Preferred Language</label>
+                            <select class="form-select form-select-lg" id="language" name="language">
+                                <option value="en" {% if form_data.language == 'en' %}selected{% endif %}>English</option>
+                                <option value="hi" {% if form_data.language == 'hi' %}selected{% endif %}>हिन्दी (Hindi)</option>
+                                <option value="te" {% if form_data.language == 'te' %}selected{% endif %}>తెలుగు (Telugu)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-accent btn-lg w-100" data-i18n="register_btn">Create Account</button>
+                    </form>
+
+                    <p class="text-center mt-4 mb-0">
+                        <span data-i18n="have_account">Already have an account?</span>
+                        <a href="{{ url_for('auth.login') }}" data-i18n="nav_login">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

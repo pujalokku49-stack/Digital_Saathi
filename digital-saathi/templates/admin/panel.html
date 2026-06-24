@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel – Digital Saathi{% endblock %}
+
+{% block content %}
+<section class="admin-section py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <h1><i class="bi bi-speedometer2"></i> <span data-i18n="admin_title">Admin Panel</span></h1>
+            <a href="{{ url_for('dashboard.home') }}" class="btn btn-outline-secondary" data-i18n="back_dashboard">Back to Dashboard</a>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="stat-card animate-fade-in">
+                    <div class="stat-icon bg-primary-soft"><i class="bi bi-chat-dots-fill"></i></div>
+                    <div class="stat-value">{{ stats.total_queries or 0 }}</div>
+                    <div class="stat-label" data-i18n="admin_total_queries">Total Queries</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card animate-fade-in delay-1">
+                    <div class="stat-icon bg-success-soft"><i class="bi bi-calendar-day"></i></div>
+                    <div class="stat-value">{{ stats.today_queries or 0 }}</div>
+                    <div class="stat-label" data-i18n="admin_today">Today's Queries</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card animate-fade-in delay-2">
+                    <div class="stat-icon bg-accent-soft"><i class="bi bi-people-fill"></i></div>
+                    <div class="stat-value">{{ stats.unique_users or 0 }}</div>
+                    <div class="stat-label" data-i18n="admin_unique_users">Active Users</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Users Table -->
+            <div class="col-lg-7">
+                <div class="admin-card">
+                    <h2 class="h4 mb-3" data-i18n="admin_users">Registered Users</h2>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Language</th>
+                                    <th>Role</th>
+                                    <th>Joined</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in users %}
+                                <tr>
+                                    <td>{{ user.id }}</td>
+                                    <td>{{ user.name }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td><span class="badge bg-secondary">{{ user.preferred_language | upper }}</span></td>
+                                    <td>
+                                        {% if user.is_admin %}
+                                        <span class="badge bg-danger">Admin</span>
+                                        {% else %}
+                                        <span class="badge bg-primary">User</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="small">{{ user.created_at[:10] }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language Stats -->
+            <div class="col-lg-5">
+                <div class="admin-card">
+                    <h2 class="h4 mb-3">Query Languages</h2>
+                    <ul class="list-group list-group-flush">
+                        {% for lang in language_stats %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            {{ lang.language | upper }}
+                            <span class="badge bg-accent rounded-pill">{{ lang.count }}</span>
+                        </li>
+                        {% else %}
+                        <li class="list-group-item text-muted">No queries yet</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Queries -->
+        <div class="admin-card mt-4">
+            <h2 class="h4 mb-3" data-i18n="admin_recent">Recent Queries</h2>
+            <div class="table-responsive">
+                <table class="table table-sm table-striped">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Query</th>
+                            <th>Language</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for q in recent_queries %}
+                        <tr>
+                            <td>{{ q.user_name or 'Guest' }}</td>
+                            <td class="text-truncate" style="max-width: 300px;" title="{{ q.query_text }}">{{ q.query_text[:80] }}{% if q.query_text|length > 80 %}...{% endif %}</td>
+                            <td>{{ q.language | upper }}</td>
+                            <td class="small">{{ q.created_at[:16] }}</td>
+                        </tr>
+                        {% else %}
+                        <tr><td colspan="4" class="text-muted text-center">No queries recorded yet</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

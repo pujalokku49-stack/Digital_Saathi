@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Healthcare & Emergency – Digital Saathi{% endblock %}
+
+{% block content %}
+<section class="module-section py-5">
+    <div class="container">
+        <a href="{{ url_for('dashboard.home') }}" class="btn btn-outline-secondary mb-4">
+            <i class="bi bi-arrow-left"></i> <span data-i18n="back_dashboard">Back to Dashboard</span>
+        </a>
+
+        <h1 class="module-page-title"><i class="bi bi-heart-pulse-fill text-danger"></i> Healthcare & Emergency Help</h1>
+        <p class="lead text-muted mb-5">Important helplines and health resources for India.</p>
+
+        <!-- Emergency Banner -->
+        <div class="emergency-banner animate-pulse-soft">
+            <i class="bi bi-telephone-fill"></i>
+            <div>
+                <strong>National Emergency Number: 112</strong>
+                <p class="mb-0">Police, Fire, Ambulance – One number for all emergencies</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-4">
+                <div class="helpline-card urgent">
+                    <div class="helpline-number">108</div>
+                    <h3>Ambulance</h3>
+                    <p>Free ambulance service in most states. Available 24/7.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="helpline-card urgent">
+                    <div class="helpline-number">102</div>
+                    <h3>Medical Advice</h3>
+                    <p>Free medical advice and ambulance dispatch.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="helpline-card">
+                    <div class="helpline-number">104</div>
+                    <h3>Health Helpline</h3>
+                    <p>Health information and counseling services.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="helpline-card">
+                    <div class="helpline-number">14555</div>
+                    <h3>Ayushman Bharat</h3>
+                    <p>PM-JAY health insurance queries and hospital finder.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="helpline-card">
+                    <div class="helpline-number">1098</div>
+                    <h3>Child Helpline</h3>
+                    <p>24/7 helpline for children in distress.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="helpline-card">
+                    <div class="helpline-number">181</div>
+                    <h3>Women Helpline</h3>
+                    <p>24/7 support for women facing violence or harassment.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-5 mb-4"><i class="bi bi-camera-video"></i> Telemedicine Apps</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="lesson-card">
+                    <h3>eSanjeevani</h3>
+                    <p>Government telemedicine platform – free doctor consultations.</p>
+                    <ul>
+                        <li>Website: esanjeevaniopd.in</li>
+                        <li>Download app from Play Store</li>
+                        <li>Register with mobile number and Aadhaar</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="lesson-card">
+                    <h3>First Aid Basics</h3>
+                    <ul class="lesson-steps">
+                        <li><strong>CPR:</strong> Call 112 first, then push hard and fast on chest center</li>
+                        <li><strong>Bleeding:</strong> Apply clean cloth and pressure on wound</li>
+                        <li><strong>Burns:</strong> Cool with running water for 20 minutes</li>
+                        <li><strong>Choking:</strong> Back blows and abdominal thrusts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
