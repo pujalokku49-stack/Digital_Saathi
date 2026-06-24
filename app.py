@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 from flask import Flask
 
 from config import Config
-from database.db import init_db
 from routes.admin import admin_bp
 from routes.auth import auth_bp
 from routes.chatbot import chatbot_bp
