@@ -10,6 +10,8 @@ from flask import Flask
 from config import Config
 
 load_dotenv()
+
+app = Flask(__name__) 
 @app.route('/')
 def home():
     return "Digital Saathi is LIVE 🚀"
