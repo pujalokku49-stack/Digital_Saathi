@@ -8,11 +8,6 @@ from dotenv import load_dotenv
 from flask import Flask
 
 from config import Config
-from routes.admin import admin_bp
-from routes.auth import auth_bp
-from routes.chatbot import chatbot_bp
-from routes.dashboard import dashboard_bp
-from routes.main import main_bp
 
 load_dotenv()
 
@@ -27,11 +22,7 @@ def create_app():
     init_db()
 
     # Register blueprints
-    app.register_blueprint(main_bp)
-    app.register_blueprint(auth_bp)
-    app.register_blueprint(dashboard_bp)
-    app.register_blueprint(chatbot_bp)
-    app.register_blueprint(admin_bp)
+    
 
     @app.context_processor
     def inject_globals():
