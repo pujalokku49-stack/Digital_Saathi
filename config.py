@@ -16,3 +16,5 @@ class Config:
     # Session cookie settings
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SAMESITE = "Lax"
+    # Secure cookies on Render/production (HTTPS)
+    SESSION_COOKIE_SECURE = os.environ.get("RENDER") == "true" or os.environ.get("FLASK_ENV") == "production"
